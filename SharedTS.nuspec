@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SharedTS</id>
+    <version>0.43</version>
+    <title>SharedTS</title>
+    <authors>Quentin Brooks</authors>
+    <owners>Zazzle</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Some files that augment certain libraries with functionality they should have already had.</description>
+    <copyright></copyright>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="*\" target="content\" exclude="obj\**;Properties\**;bin\**" />
+  </files>
+</package>
