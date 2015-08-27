@@ -3,7 +3,7 @@ define(["require", "exports", "./loadCss"], function (require, exports, loadCss)
         function Directive() {
             var _this = this;
             for (var key in Directive.prototype) {
-                if (key === "link" || key === "createScope" || key === "construct")
+                if (key === "link" || key === "createScope" || key === "construct" || key === "safeApply")
                     continue;
                 if (typeof this[key] === "function") {
                     (function (key) {

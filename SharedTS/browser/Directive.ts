@@ -50,7 +50,7 @@ class Directive implements angular.IScope {
     private scope: angular.IScope;
     constructor() {
         for (var key in Directive.prototype) {
-            if (key === "link" || key === "createScope" || key === "construct") continue;
+            if (key === "link" || key === "createScope" || key === "construct" || key === "safeApply") continue;
             if (typeof this[key] === "function") {
                 ((key) => {
                     var self = this;
