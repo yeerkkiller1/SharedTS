@@ -106,6 +106,10 @@ class Directive implements angular.IScope {
         (<any>scope).construct(element, attrs);
     }
 
+    public safeApply() {
+        if (!this.$root.$$phase) this.$apply();
+    }
+
     public construct(element?: angular.IAugmentedJQuery, attrs?: angular.IAttributes) { }
 }
 

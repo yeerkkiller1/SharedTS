@@ -85,6 +85,10 @@ define(["require", "exports", "./loadCss"], function (require, exports, loadCss)
             scope.element = element;
             scope.construct(element, attrs);
         };
+        Directive.prototype.safeApply = function () {
+            if (!this.$root.$$phase)
+                this.$apply();
+        };
         Directive.prototype.construct = function (element, attrs) { };
         return Directive;
     })();
