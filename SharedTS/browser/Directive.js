@@ -46,7 +46,9 @@ define(["require", "exports", "./loadCss"], function (require, exports, loadCss)
                 if (key[0] === "$")
                     continue;
                 var val = this[key];
-                if (val === "=" || val === "=?") {
+                if (val === "=" || val === "=?"
+                    || val === "&" || val === "&?"
+                    || val === "@" || val === "@?") {
                     scope[key] = val;
                 }
                 else if (typeof val !== "function") {

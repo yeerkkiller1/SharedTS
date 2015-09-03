@@ -26,6 +26,7 @@
     <TypeScriptCompile Include="SharedTS\browser\Directive.ts" />
     <TypeScriptCompile Include="libs\angular.d.ts" />
     <TypeScriptCompile Include="SharedTS\browser\loadCss.ts" />
+    <TypeScriptCompile Include="SharedTS\browser\urlHelper.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libs\angular.js" />
@@ -40,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharedTS.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
