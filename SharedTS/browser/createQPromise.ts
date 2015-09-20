@@ -2,7 +2,7 @@
 /// <amd-dependency path="angular-sanitize">
 
 import angular = require("angular");
-import Directive = require("SharedTS/browser/Directive");
+import Directive = require("./Directive");
 import $ = require("jquery");
 
 import QPromise = require("../shared/QPromise");

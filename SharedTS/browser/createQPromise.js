@@ -6,7 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", "angular", "SharedTS/browser/Directive", "angular", "angular-sanitize"], function (require, exports, angular, Directive) {
+define(["require", "exports", "angular", "./Directive", "angular", "angular-sanitize"], function (require, exports, angular, Directive) {
     var parse;
     //Synchronizes assuming the function is idempotent, and the output is a QPromise, and then sets the value
     //  of the QPromise in the parent as variableName
