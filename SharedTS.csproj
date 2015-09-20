@@ -22,19 +22,24 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="libs\firebase.d.ts" />
     <TypeScriptCompile Include="libs\jquery.d.ts" />
+    <TypeScriptCompile Include="libs\underscore.d.ts" />
+    <TypeScriptCompile Include="SharedTS\browser\createQPromise.ts" />
     <TypeScriptCompile Include="SharedTS\browser\Directive.ts" />
     <TypeScriptCompile Include="libs\angular.d.ts" />
     <TypeScriptCompile Include="SharedTS\browser\loadCss.ts" />
     <TypeScriptCompile Include="SharedTS\browser\urlHelper.ts" />
+    <TypeScriptCompile Include="SharedTS\shared\CreateFirebasePromise.ts" />
+    <TypeScriptCompile Include="SharedTS\shared\QPromise.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libs\angular.js" />
+    <Content Include="libs\firebase.js" />
     <Content Include="libs\jquery.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SharedTS\node\" />
-    <Folder Include="SharedTS\shared\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -43,7 +48,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SharedTS.nuspec" />
+    <Content Include="libs\underscore.js" />
+    <Content Include="SharedTS.nuspec">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
