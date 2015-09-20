@@ -15,6 +15,8 @@ define(["require", "exports", "angular", "./Directive", "angular"], function (re
         if (typeof newObj !== "object" || typeof existingObj !== "object") {
             return newObj;
         }
+        if (!newObj || !existingObj)
+            return newObj;
         //For arrays preserve the array, use splice to keep it array like
         if ('splice' in newObj && 'length' in existingObj) {
             var oldObjs = existingObj.splice(0, existingObj.length);
@@ -63,10 +65,13 @@ define(["require", "exports", "angular", "./Directive", "angular"], function (re
         //public path: any[] = <any>"=";
         objIntegrate.prototype.construct = function (element) {
             var _this = this;
-            this.$watch("input", function () {
+            var update = function () {
                 var input = _this.$parent.$eval(_this.input);
                 _this.output = integrateData(input, _this.output);
-            });
+            };
+            this.$watch("input", update);
+            var unsub = this.$parent.$watch(this.input, update);
+            this.$on("$destroy", function () { return unsub(); });
         };
         return objIntegrate;
     })(Directive);

@@ -12,6 +12,7 @@ export function integrateData(newObj, existingObj) {
     if (typeof newObj !== "object" || typeof existingObj !== "object") {
         return newObj;
     }
+    if (!newObj || !existingObj) return newObj;
 
     //For arrays preserve the array, use splice to keep it array like
     if ('splice' in newObj && 'length' in existingObj) {
@@ -62,10 +63,13 @@ class objIntegrate extends Directive {
     //public path: any[] = <any>"=";
 
     public construct(element: angular.IAugmentedJQuery) {
-        this.$watch("input", () => {
+        var update = () => {
             var input = this.$parent.$eval(this.input);
             this.output = integrateData(input, this.output);
-        });
+        };
+        this.$watch("input", update);
+        var unsub = this.$parent.$watch(this.input, update);
+        this.$on("$destroy", () => unsub());
     }
 }
 

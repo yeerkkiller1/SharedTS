@@ -26,6 +26,7 @@ define(["require", "exports", "angular", "./Directive", "underscore"], function 
             this.orderByChild = "=?";
             this.startAt = "=?";
             this.endAt = "=?";
+            this.orderByKey = "=?";
             this.throttle = "=?";
             this.transform = "=?";
             this.flattenTransform = "=?";
@@ -40,6 +41,9 @@ define(["require", "exports", "angular", "./Directive", "underscore"], function 
                 var ref = _this.refBase.child(_this.refPath);
                 if (_this.limitToLast) {
                     ref = ref.limitToLast(_this.limitToLast);
+                }
+                if (_this.orderByKey) {
+                    ref = ref.orderByKey();
                 }
                 if (_this.orderByChild) {
                     ref = ref.orderByChild(_this.orderByChild);
