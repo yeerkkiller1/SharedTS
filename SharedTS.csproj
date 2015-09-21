@@ -30,7 +30,9 @@
     <TypeScriptCompile Include="libs\angular.d.ts" />
     <TypeScriptCompile Include="SharedTS\browser\FirebaseRead.ts" />
     <TypeScriptCompile Include="SharedTS\browser\loadCss.ts" />
+    <TypeScriptCompile Include="SharedTS\browser\objIntegrate.ts" />
     <TypeScriptCompile Include="SharedTS\browser\syncUrl.ts" />
+    <TypeScriptCompile Include="SharedTS\browser\SyncVariable.ts" />
     <TypeScriptCompile Include="SharedTS\browser\urlHelper.ts" />
     <TypeScriptCompile Include="SharedTS\shared\CreateFirebasePromise.ts" />
     <TypeScriptCompile Include="SharedTS\shared\QPromise.ts" />
